@@ -1,0 +1,300 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage[a4paper, inner=1in, outer=1in]{geometry}
+
+\begin{document}	
+	\begin{titlepage}
+		
+		\centering
+		\includegraphics[width=2in]{IITG_logo.png} % Path to the logo image
+		
+		%	\vfill
+		\vspace*{0.5cm}
+		
+		\Huge\textbf{EE-560\\Power Electronic Converters}
+		
+		\vspace{1.5cm}
+		\LARGE\textbf{Half-Bridge CLLC Resonant Converter}
+		
+		\vspace{2.5cm}
+		\Large{\textbf{Submitted By}\\\textbf{PAMBALI JITHENDRA(244102106)}
+		
+		\vspace{2cm}
+		
+		
+		
+		\Large\textbf{Deptartment of Electronics and Electrical Engineering}
+		
+		\vspace{0.75cm}
+		
+		\Large\textbf{Indian Institute of Technology Guwahati}
+		
+		\vspace{2cm}
+		\Large\textbf\date{\today}
+		
+	\end{titlepage}
+	
+	%\maketitle
+	
+	%\newpage
+	%\maketitle
+	\pagenumbering{roman}
+	
+	
+	
+	
+	
+	\tableofcontents
+	\listoffigures
+	\chapter{Introduction}
+	\paragraph{}
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	Numerous devices, including cars, chargers, renewable energy systems, and uninterrupted power supply (UPS), use DC-DC converters. DC that is galvanically insulated .Energy storage systems typically choose DC converters. Usually, the converters act as an interface between a high voltage battery pack and a DC link. Resonant CLLC DC-DC converters are excellent options for bidirectional Energy storage systems because of their high efficiency, bidirectional power flow, and galvanic isolation. A bidirectional half-bridge CLLC converter is designed and assessed in this work. In the design, an ideal soft-switching function is used. The design process  a few  factors are needed. Soft-switching, which drastically reduces switching losses, is possible with the correct inductor and capacitor combination. In addition to operating the circuit in resonance, we also run it at 50 percentage duty cycle. The fundamental harmonic approximation technique makes it simple to describe the output side of this circuit as an equivalent resistor. Because of this, it is easy to model the circuit into its equivalent. In order to create symmetrical and asymmetrical Half bridge CLLC converters .
+\vspace{0.5cm}
+	\paragraph{}
+	Bidirectional dc–dc converters are necessary for ENERGY storage systems (ESSs), microgrids, automotive, and other applications. These converters serve as an interface between a low-voltage bus, which typically implements an energy storage device like a battery or a supercapacitor, and a high-voltage bus, which installs an energy generation device. However, depending on the state-of-charge (SOC), the battery or supercapacitor's voltage typically fluctuates over a large range, and as voltage rises, so does the cost . As a result, a high voltage ratio between input and output must be provided when integrating with an ESS.Bidirectional dc-dc is crucial for preserving the dc bus voltage and system power balance.
+\begin{figure}[ht]
+		\centering
+		\includegraphics[width=17cm]{CIRCUITVISIO.pdf} % Adjust the width as needed
+		\caption{SCHEMATIC HALF-BRIDGE CLLC CONVERTER}
+		%\label{fig:pdfimage}\\
+	\end{figure}
+	\paragraph{}
+    \vspace{0.5cm}
+	The design of a CLLC bidirectional resonant converter can benefit from the research on conventional LLC resonance. Low electromagnetic interference (EMI) and soft switching from zero to full loads are possible with an LLC resonant converter, which is commonly utilized for single direction applications.
+In order to get high voltage gain and high efficiency, a few isolated full-bridge bidirectional dc/dc converter topologies and control schemes have been proposed recently. A schematic of a half-bridge CLLC converter with magnetic
+integration design is shown in Fig. 1.1 Comparing with full-
+bridge CLLC topology, the half-bridge one has benefits in terms
+of reduced weight, size and cost, since the number of
+corresponding driving circuits and cooling systems can be
+reduced, and consequently, the overall efficiency of the half-
+bridge structure would be higher than that of the full-bridge
+CLLC topology. The bridge capacitors \( C_{11}, C_{12},C_{21},C_{22}  \)
+the half-bridge CLLC circuit can also function as resonant
+capacitors. Furthermore, with a proper transformer design, the
+CLLC circuit uses the leakage inductance of the transformer
+instead of two individual inductors, \(L_{1},L_{2}\)  which slightly
+increases the power loss of the transformer, but eliminates the
+power losses of the two inductors and reduces the overall size of the converter.The converter simultaneously uses zero-
+voltage switching (ZVS)-on for the inverting stage choppers
+and zero-current switching (ZCS)- OFF for the rectifier switches.
+However, under the high dc voltage gain state, the primary side
+of the resonant network has a large current stress that increases
+the losses of the transformer and the resonant network.
+
+	
+	%	\section{Overall Description}
+	%	\section{Introduction}
+	\chapter{WORKING }
+	\paragraph{}
+	To create the intended sinusoidal current waveform through the circuit, the resonant capacitor and inductor must resonate at a specific frequency. Zero-voltage or zero-current switching (ZVS or ZCS) is achieved by the circuit because the resonance frequency and the switching frequency are tightly tuned. In order to provide efficient energy transfer and a reduction in switching loss, the capacitive component will shape the voltage waveform and the inductive component will help shape the current waveform. The resonant component values are often set to produce a resonant frequency, mainly for stabilization and to guarantee soft switching during load transitions. In CLLC, the transformer and the magnetizing inductor are frequently connected. This allows power to flow both ways and stores energy.Additional soft-switching support is provided by magnetizing inductance, which modulates the major side current of the converter under light-load or high-load circumstances. Additionally, it restricts the circulating current, which lessens power loss from the low load.
+          \begin{figure}[ht]
+		\centering
+		\includegraphics[width=7in]{FWAVEFORMS.pdf} % Adjust the width as needed
+		\caption{Typical waveforms of a bidirectional half-bridge CLLC converter.}
+		%\label{fig:pdfimage}\\
+	\end{figure}
+    \paragraph{}
+          Fig. 2.1 illustrates typical waveforms of a bidirectional half-
+bridge CLLC circuit operating at a switching frequency lower
+than its resonant frequency. All the switches are off during dead
+band time between \( t_{a} \) and \( t_{b} \) to prevent the bridges from short-
+circuit. There are no power transferring from the primary side to
+the secondary side in this interval, therefore the secondary side
+resonant inductor current\( i_{s} \) is zero. The gate voltage,\( v_{s1} \)is
+applied at time\( t_{b} \) , when the primary side resonant inductor
+current,݅ \( i_{p} \)  is negative, which means the switch current ofܵ \( S_{1} \)
+freewheels through the body diode. Therefore, at\( t_{1} \),\( S_{1} \) will
+turn on with ZVS. Beyond \( t_{b} \) ,\( i_{s} \) is positive and power are
+delivered from the primary side to the secondary side through
+the transformerܶ . Between\( t_{b} \) and\( t_{c} \), since \( L_{m} \) is much larger
+than \( L_{1} \),\( i_{p} \)resonates whereas the magnetizing inductance
+current,݅ \( i_{m} \), keeps increasing almost linearly. When݅\( i_{p} \) meets݅  \( i_{m} \)
+at\( t_{c} \),\( i_{p} \) and݅\( i_{m} \) resonate together and no power transfer to the
+secondary side, therefore݅\( i_{s} \) becomes zero and the body diode ofܵ 
+\( S_{3} \) turns off with ZCS automatically. Similar operating
+waveform can be found for the other half cycle but with opposite
+current direction.
+\section{TOPOLGY}
+ \paragraph{}
+ The bidirectional half-bridge CLLC converter has a
+symmetrical structure consisting of a primary inverting stage
+and a secondary rectifying stage. In comparison to a full-bridge
+CLLC converter, the half-bridge topology uses primary side
+inverting stage capacitors \( C_{11}, C_{12}  \) and secondary side
+rectifying stage capacitors \( C_{21},C_{22}  \) as resonant capacitors.
+\( L_{1}  \) and  \( L_{2}  \) are resonant inductors, and with a proper transformer
+design, the resonant inductances can be integrated into the
+transformer’s primary and secondary windings. \( n_{} \) and \( L_{m} \) are
+the turns ratio and magnetizing inductance of the transformer,
+respectively. The bidirectional CLLC converter has two power
+flow modes: charging mode (power flows from the DC link to
+the battery) and discharging mode where power flows from the battery
+to the DC link.
+\section{CHARGING MODE}
+The equivalent circuit of the half-bridge CLLC converter in charging mode is shown in Fig. 2.2 \\\( R_{e}  \),\( L'_{2}  \),\( C'_{21}  \), and \( C'_{22}  \) are the equivalent \( R_{O}  \),\( L_{2}  \),\( C_{21}  \), and \( C_{22}  \)   of the converters, respectively.
+In charging mode, the transfer function H(s) can be derived as follows:
+\begin{equation*} H(s)= \frac{1}{n}\cdot\frac{R_{e}}{R_{e, FB}+Z_{L2}^{\prime}+Z_{C2}^{\prime}}\cdot \frac{(R_{e}+Z_{L2}^{\prime}+Z_{C2}^{\prime})\Vert Z_{Lm}} {Z_{L1}+Z_{C1}+(R_{e}+Z_{L2}^{\prime}+Z_{C2}^{\prime})\Vert Z_{Lm}}  \end{equation*}
+The gain of the half-bridge CLLC converter can be derived as:
+\begin{equation*} G_{charging}=\vert H(s)\vert =\vert \frac{V_{out}}{V_{in}}\vert =\frac{1}{n}\cdot\frac{1}{\sqrt{a^{2}+b^{2}}}  \end{equation*}
+where, 
+\begin{align*} &\qquad\qquad\qquad a= \frac{1}{h}+1-\frac{1}{h.\omega^{2}} \\ &b=\left(\frac{k}{h}+1+\frac{1}{g\cdot h}+\frac{1}{g}\right)\frac{Q}{\omega}-(\frac{k}{h}+1+k) Q\cdot\omega-\frac{Q}{g\cdot h\cdot\omega^{3}} \\ &\quad\ \ \ \ \ \begin{cases} h=\frac{L_{m}}{L_{1}}, k=\frac{L_{2}^{\prime}}{L_{1}}, g=\frac{c_{2}^{\prime}}{c_{1}}, \omega=\frac{\omega_{s}}{\omega_{r}}\\ \quad\omega_{r}=\frac{1}{\sqrt{L_{1}C_{1}}}, \ Q=\frac{\sqrt{L_{1}/C_{1}}}{R_{e}} \end{cases} \end{align*}
+Q is quality factor,\( W_{r}  \) and \( W_{s}  \) are the resonant frequency and the operating frequency, respectively, and ω is the normalized frequency.
+A detailed derivation of Re for a Half-bridge CLLC converter is done  by using the First Harmonic Approximation (FHA). Similarly, for the half-bridge CLLC converter, the parameters can be expressed as:
+\begin{figure}[ht]
+    
+		\centering
+		\includegraphics[width=15cm]{CHARGINGMODE.pdf} % Adjust the width as needed
+		\caption{Equivalent circuits of the half-bridge CLLC converters in charging mode.}
+		%\label{fig:pdfimage}\\
+	\end{figure}
+    \begin{equation*}\begin{split} &R_{e}=(2n^{2}/n^{2}) R_{o}\ \ \ \ L_{2}^{\prime}=n^{2}L_{2}\ \ \ \ C_{1}=C_{11}+C_{12}\\ &\ \ C_{2}^{\prime}=C_{21}^{\prime}+C_{22}^{\prime}\ \ \ \ C_{21}^{\prime}=C_{21}/n^{2} \ \ \ \ C_{22}^{\prime}=C_{22}/n^{2} \end{split} \end{equation*}
+\\[0.5cm]
+
+Fig. 3.1 illustrates different gain curves at various load conditions versus normalized frequency. With a lower Q, the maximum gain increases, but the slope of the curve when W≥1 decreases. In this case, k and g are set to be 1 to simplify the design, which means\( L_{1}  \)=\( L'_{2}  \) and\( C_{2}  \)=\( C'_{2}  \).h is set to be 4.
+\section{DISCHARGING MODE}
+The equivalent circuits of the half-bridge CLLC converter in discharging mode is shown in Fig. 2.3. The gain of the converter is derived as follows:
+\begin{equation*} G_{dischargig} =n \cdot\frac{1}{\sqrt{c^{2}+d^{2}}}  \end{equation*}
+where, 
+\begin{align*} &\qquad\qquad\qquad c=\frac{1}{h}+1-\frac{1}{h^{\prime}\omega^{{}^{\prime 2}}} \\ &d=\left(\frac{k^{\prime}}{h}+1+\frac{1}{g^{\prime}.h^{\prime}}+\frac{1}{g^{\prime}}\right)\frac{Q^{\prime}}{\omega^{\prime}}- (\frac{k^{\prime}}{h^{\prime}}+1+k^{\prime}) Q^{\prime}\cdot\omega^{\prime}-\frac{Q^{\prime}}{g^{\prime}.h^{\prime}.\omega^{\prime 3}}\\ &\ \ \ \ \qquad\begin{cases} h^{\prime}=\frac{L_{m}^{\prime}}{L_{2}}, k^{\prime}=\frac{L_{1}^{\prime}}{L_{2}}, g^{\prime}=\frac{c_{1}^{\prime}}{c_{2}}, \omega^{\prime}=\frac{\omega_{s}}{\omega_{r}^{\prime}}\\ \qquad\omega_{r}^{\prime}=\frac{1}{\sqrt{L_{2}C_{2}}}, Q^{\prime}=\frac{\sqrt{L_{2}/C_{2}}}{R_{e}^{\prime}} \end{cases} \end{align*}
+The parameters can be calculated as:
+\begin{align*} &R_{e}^{\prime}=(2/n^{2}\pi^{2}) R_{o}^{\prime}\ \ \ \ L_{1}^{\prime}=L_{1}/n^{2}\ \ \ C_{1}^{\prime}=C_{11}^{\prime}+C_{12}^{\prime}\\ &\ \ \ C_{2}=C_{21}+C_{22}\ \ \ \ C_{11}^{\prime}=n^{2}C_{21}\ \ \ \ C_{12}^{\prime}=n^{2}C_{22} \\ &\ \ \ L_{m}^{\prime}=L_{m}/n^{2}\end{align*}
+	With the same L and C values, the discharging mode will have the same resonant frequency as the charging mode has, which means\( W'_{r}  \)=\( W_{r}  \).k′,g′, and h′ will keep the same values as the k, g, and h in charging mode, respectively. However, since the equivalent load changes, Q′ will be changed as:
+    \begin{equation*} Q^{\prime}=n^{2}R_{o}/R_{o}^{\prime}Q \end{equation*}
+	%	\begin{figure}[h]
+		%	\centering
+		%	\includegraphics[width=7in]{image1.jpg}
+		%	\caption{Asymmetrical Full-Bridge CLLC}
+		%	\label{fig:mesh1}	
+		%	\end{figure}
+        
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=11cm]{DISCHARGINGMODE.pdf} % Adjust the width as needed
+		\caption{Equivalent circuits of the half-bridge CLLC converters in discharging mode.}
+		%\label{fig:pdfimage}\\
+	\end{figure}
+	%	\section{Simulation}
+	\paragraph{}
+	\chapter{SOFT SWITCHING REGION} 
+	The resonant tank of the half-bridge CLLC circuit can present inductive or capacitive depending on operating frequency. As shown in Fig. 3.1, the resonant network is inductive when the slope of the gain is negative, and ZVS can be realized in this region. Furthermore, in order to ensure ZVS turning on, the magnetizing inductor current should be large enough to fully discharge and charge the output capacitors of the MOSFETs during the dead band time. Therefore, the magnetizing inductance should be small enough. The maximum value of \( L_{m}  \)for a Half-bridge CLLC converter is calculated as
+  \begin{equation*} L_{m} \leq\frac{t_{db}}{8C_{oss}f_{s, max}},  \end{equation*}
+    \begin{figure}[ht]
+		\centering
+		\includegraphics[width=15cm]{GAINCURVES.png} % Adjust the width as needed
+		\caption{Gain curves versus normalized frequency  at different loads.}
+		%\label{fig:pdfimage}\\
+	\end{figure}
+    
+    where, \( t_{db}  \) is the dead band time, \( C_{oss}  \) is the output capacitance of MOSFET, and \( f_{s,max}  \) is the maximum switching frequency.
+   \chapter{CALCULATION OF PARAMETERS}
+	 Given,
+      \begin{equation*}\begin{split} &V_{in}=(100V) \ \ \ \ V_{o}^{}=400V\ \ \ \ C_{1}=C_{11}=C_{12}\\ &\ \ C_{2}=C_{21}=C_{22}\ \ \ \ f_{sw}=25kHz \ \ \ \ P_{O}=1KW \end{split} \end{equation*}
+       Resonant frequency \( f_{r}  \) = \( f_{sw}  \) = \( 25kHz  \) and quality factor we are assuming Q = 0.45
+       \begin{equation*} G_{charging}=\vert H(s)\vert =\vert \frac{V_{out}}{V_{in}}\vert =\frac{1}{n}\cdot\frac{1}{\sqrt{a^{2}+b^{2}}}  \end{equation*}
+         \begin{equation*} G_{charging}=\vert H(s)\vert =\vert \frac{V_{out}}{V_{in}}\vert =\frac{1}{4}\cdot\frac{1}{\sqrt{a^{2}+b^{2}}}  \end{equation*}
+         and considering g = 1;and k = 1; h = 4 where \(L_{m}\) = 4 times of \(L_{1}\) for better output and stepping up the voltage
+         
+          
+          \begin{align*} &\qquad\qquad\qquad a= \frac{1}{h}+1-\frac{1}{h.\omega^{2}} \\ &b=\left(\frac{k}{h}+1+\frac{1}{g\cdot h}+\frac{1}{g}\right)\frac{Q}{\omega}-(\frac{k}{h}+1+k) Q\cdot\omega-\frac{Q}{g\cdot h\cdot\omega^{3}} \\ &\quad\ \ \ \ \ \begin{cases} h=\frac{L_{m}}{L_{1}}, k=\frac{L_{2}^{\prime}}{L_{1}}, g=\frac{c_{2}^{\prime}}{c_{1}}, \omega=\frac{\omega_{s}}{\omega_{r}}\\ \quad\omega_{r}=\frac{1}{\sqrt{L_{1}C_{1}}}, \ Q=\frac{\sqrt{L_{1}/C_{1}}}{R_{e}} \end{cases} \end{align*}
+        After calculation we will get 
+          \\ a = 1.25, b = -158962.5 \( L_{1}= L_{2} = 0.7uH  \) and \( C_{11}= C_{12}=C_{21} =C_{22} = 3.5uF \)
+          \\
+          Transformers ratio n = 400/100 = 4 \\ 
+          from the output power which is given that\(P_{O} = 1KW\) we can calculate the load resistance as \\
+          \( P_{O} = \frac{V^2}{R} \) = \(  \frac{1000}{400^2} \) = 160ohm   \(L_{m}=2.8uH\)
+          \\
+          And the same similar values for the both charging and discharging mode.
+          \chapter{DESIGN AND SIMULATION}
+          \section{SIMULINK MODEL}
+           \begin{figure}[ht]
+		\centering
+		\includegraphics[width=18cm]{OPENLOOPSIMN.png} % Adjust the width as needed
+		\caption{ SIMULATION OF HALF-BRIDGE CLLC CONVERTER}
+		%\label{fig:pdfimage}\\
+	\end{figure}
+    This is the simulation and after substituting the desired and calculated values that we got above.\\
+    \begin{equation*} \begin{cases} \qquad\quad L_{1}=0.7\mu H, \ L_{2}=0.7\mu H\\ C_{11}=C_{12}=3.5\mu F, \ C_{21}=C_{22}=3.5\mu F \end{cases}\end{equation*}
+	\section{SIMULATION RESULTS}
+    \\[1CM]
+    \subsection{GATE PULSE}
+    \\[1CM]
+     \begin{figure}[ht]
+		\centering
+		\includegraphics[width=15cm]{SWITCHING SIGNAL.png} % Adjust the width as needed
+		\caption{ GATE  SIGNAL PULSE}
+        
+		%\label{fig:pdfimage}\\
+	\end{figure}
+    
+    \subsection{VOLTAGE AND CURRENT WAVEFORMS}
+    
+    We will get the output voltage as 383.5V as it is a open loop simulink model there will be some deviation from the desired output.And Current as\(I_{0} = 2.5A\) 
+	
+    
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=15CM]{CURRENT WAVEFORM.png} % Adjust the width as needed
+		\caption{OUTPUT CURRENT WAVEFORM}
+		\label{fig:last_31}
+		
+	\end{figure}
+    \paragraph{}
+    \begin{figure}[ht]
+		\centering
+		\includegraphics[width=15cm]{INPUT VOLTAGE.png} % Adjust the width as needed
+		\caption{INPUT VOLTAGE WAVEFORM}
+		\label{fig:last_32}
+		
+	\end{figure}
+    
+    
+    
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=15cm]{OUTPUTVOLTAGE.png} % Adjust the width as needed
+		\caption{OUTPUT VOLTAGE WAVEFORM}
+		\label{fig:last_32}
+		
+	\end{figure}
+     
+    \begin{bib}
+       \cite{8055606}
+    \cite{8797344}
+    \cite{9947604}
+    \cite{9807005}
+    \bibliographystyle{plain}
+    \bibliography{papers}
+      
+    \end{bib}
+    \section*{CONCLUSION}
+    Hence,I successfully generated the simulations of Half-Bridge cllc bidirectional converter desired output.And also I Plotted the Gain Curves Graphs to observe the how gain changes with respect to frequency and quality factor 
+    
+     
+	
+  
+    
+    
+	
+
+	
+	
+	
+ 
+
+	
+	
+	
+	
+	
+	
+\end{document}
+
+	
+	
+	
